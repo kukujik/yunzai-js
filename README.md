@@ -15,4 +15,4 @@ curl -o ./plugins/example/whois.js https://raw.githubusercontent.com/kukujik/yun
 curl -o ./plugins/example/video.js https://raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/video.js
 ```
 ---
-- 未完待续...
+- [ ] **未完待续...**
