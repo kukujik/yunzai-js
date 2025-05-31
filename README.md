@@ -2,17 +2,17 @@
 
 ### ICP
 ```bash
-curl -o ./plugins/example/ICP.js https://raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/ICP.js
+curl -o ./plugins/example/ICP.js https://git.090708.xyz/raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/ICP.js
 ```
 ---
 ### whois
 ```bash
-curl -o ./plugins/example/whois.js https://raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/whois.js
+curl -o ./plugins/example/whois.js https://git.090708.xyz/raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/whois.js
 ```
 ---
 ### video
 ```bash
-curl -o ./plugins/example/video.js https://raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/video.js
+curl -o ./plugins/example/video.js https://git.090708.xyz/raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/video.js
 ```
 ---
 - [ ] **未完待续...**
