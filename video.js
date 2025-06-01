@@ -144,7 +144,7 @@ export class videojx extends plugin {
 
             // 提取视频信息
             let videoInfo = {
-                url: data.data.video_url || data.data.play_url,
+                url: data.data.play_url || data.data.video_url,
                 desc: data.data.additional_data[0].desc,
                 author: data.data.additional_data[0].nickname,
                 avatar: data.data.additional_data[0].url,
@@ -277,9 +277,9 @@ export class videojx extends plugin {
     async buff(e, ttl, response) {
         let buff = await response.arrayBuffer();
         if (buff) {
-            fs.writeFile(`./resources/video/$ {ttl}.mp4`, Buffer.from(buff), "binary", function(err) {
+            fs.writeFile(`./resources/video/${ttl}.mp4`, Buffer.from(buff), "binary", function(err) {
                 if (!err) {
-                    e.reply(segment.video(`./resources/video/$ {ttl}.mp4`));
+                    e.reply(segment.video(`./resources/video/${ttl}.mp4`));
                 } else {
                     e.reply("下载/发送视频出错");
                 }
