@@ -5,13 +5,13 @@
 curl -o ./plugins/example/ICP.js https://git.090708.xyz/raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/ICP.js
 ```
 ---
-> 发送#icp查询+域名，查询icp域名备案信息
+> #icp查询+域名，查询icp域名备案信息
 ### whois
 ```bash
 curl -o ./plugins/example/whois.js https://git.090708.xyz/raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/whois.js
 ```
 ---
-> 发送#whois查询+域名，查询域名信息,域名持有者,注册商等等...
+> #whois查询+域名，查询域名信息,域名持有者,注册商等等...
 ### video
 ```bash
 curl -o ./plugins/example/video.js https://git.090708.xyz/raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/video.js
