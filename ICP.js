@@ -10,7 +10,7 @@ export class IcpQuery extends plugin {
       priority: 10,
       rule: [
         {
-          reg: '^#?(icp|ICP)查询\\s.+$',
+          reg: /^#?icp查询\s?.+$/i,
           fnc: 'queryIcp'
         }
       ]
@@ -18,7 +18,7 @@ export class IcpQuery extends plugin {
   }
 
   async queryIcp () {
-    const domain = this.e.msg.replace(/^#?(icp|ICP)查询\s/, '').trim()
+    const domain = this.e.msg.replace(/^#?icp查询\s?/i, '').trim()
     if (!domain) {
       await this.reply('请输入要查询的域名')
       return

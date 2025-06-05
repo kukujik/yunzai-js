@@ -11,7 +11,7 @@ export class WhoisQuery extends plugin {
       priority: 10,
       rule: [
         {
-          reg: '^#?(whois|WHOIS)查询(\\s+|)(.+)$',
+          reg: /^#?whois查询\s?.+$/i,
           fnc: 'queryWhois'
         }
       ]
@@ -19,7 +19,7 @@ export class WhoisQuery extends plugin {
   }
 
   async queryWhois() {
-    let originalDomain = this.e.msg.replace(/^#?(whois|WHOIS)查询\s*/i, '').trim()
+    let originalDomain = this.e.msg.replace(/^#?whois查询\s?/i, '').trim()
     if (!originalDomain) {
       await this.reply('请输入要查询的域名')
       return
