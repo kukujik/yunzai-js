@@ -102,27 +102,8 @@ export class videojx extends plugin {
         });
         this.buff(e, "bilibili", response);
     }
-
-    //QQ小世界解析
-    // async qqxsj (e,url) {
-    //   logger.info("[视频解析]-QQ小世界");
-    //   let nickName = url.userInfo.nickName
-    //   if(!nickName){
-    //       e.reply([
-    //           segment.image(res.coverUrl),
-    //           `简介:${res.content}\n作者:${nickName}\n\n点赞:${res.likeNum}      评论:${res.commentNum}\n火箭:${res.fuelNum}      转发:${res.shareNum}\n\n正在解析QQ小世界视频，请等待......`
-    //       ])
-    //   } else {}
-    //   let res = url.feedInfo
-    //   e.reply([
-    //     segment.image(res.coverUrl),
-    //     `简介:${res.content}\n作者:${nickName}\n\n点赞:${res.likeNum}      评论:${res.commentNum}\n火箭:${res.fuelNum}      转发:${res.shareNum}\n\n正在解析QQ小世界视频，请等待......`
-    //   ])
-    //   e.reply(segment.video(res.videoInfo.playUrl));
-    //   return true
-    // }
-
-    //抖音解析
+   
+     //抖音解析
     async douyin(e, url) {
         try {
             logger.info(`[视频解析]-开始解析抖音URL: ${url}`);

@@ -17,7 +17,7 @@ curl -o ./plugins/example/whois.js https://git.090708.xyz/raw.githubusercontent.
 curl -o ./plugins/example/video.js https://git.090708.xyz/raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/video.js
 ```
 ---
-> 短视频解析插件，支持的平台有bilibili/快手/抖音，发送视频链接自动解析
+> 短视频解析插件，支持的平台有bilibili/快手/抖音，发送视频链接自动解析，依靠视频解析api，如果api寄了自然也就用不了了
 ### 二维码
 ```bash
 curl -o ./plugins/example/二维码.js https://git.090708.xyz/raw.githubusercontent.com/kukujik/yunzai-js/refs/heads/main/二维码.js
