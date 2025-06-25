@@ -29,6 +29,11 @@ export class IcpQuery extends plugin {
       const response = await fetch(apiUrl)
       const data = await response.json()
 
+      if (data.code === 201) {
+        await this.reply('该域名未进行备案')
+        return
+      }
+
       if (data.code !== 200 || !data.icp) {
         await this.reply('查询失败，请检查域名是否正确或稍后再试')
         return
