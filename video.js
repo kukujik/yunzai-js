@@ -170,7 +170,7 @@ export class videojx extends plugin {
 
     //快手解析
     async kuaishou(e, url) {
-        let res = await fetch(`https://ks.090708.xyz/api/sp_jx/kuaishou.php?url=${url}`);
+        let res = await fetch(`https://ks.119899.xyz/api/sp_jx/kuaishou.php?url=${url}`);
         res = await res.json();
 
         if (!res || res.code !== 200) {
