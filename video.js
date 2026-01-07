@@ -163,7 +163,7 @@ export class videojx extends plugin {
 
     } catch (err) {
       logger.error('[视频解析]-抖音解析错误:', err);
-      await e.reply(`抖音解析失败: ${err.message}\n请检查链接是否正确或稍后再试`); // 修正这里
+      await e.reply(`抖音解析失败: ${err.message}\n请检查链接是否正确或稍后再试`);
       return false;
     }
   }
@@ -174,6 +174,7 @@ export class videojx extends plugin {
       logger.info("[视频解析]-开始解析快手URL");
 
       let apiUrl = `https://api.bugpk.com/api/ksjx?url=${encodeURIComponent(url)}`;
+
       let res = await fetch(apiUrl);
 
       if (!res.ok) {
@@ -191,11 +192,10 @@ export class videojx extends plugin {
 
       // 检测是否为图集
       if (videoData.images && Array.isArray(videoData.images) && videoData.images.length > 0) {
-        await e.reply("当前为快手图集，暂不支持解析");
+        await e.reply("暂不支持图集解析");
         return false;
       }
 
-      // 正常视频解析流程
       const author = videoData.author || "未知作者";
       const title = videoData.title || "无描述";
       const videoUrl = videoData.url;
@@ -220,14 +220,14 @@ export class videojx extends plugin {
 
       await e.reply(msg);
 
-      // 下载并发送视频
       let response = await fetch(videoUrl);
       await this.buff(e, "kuaishou", response);
       return true;
 
     } catch (err) {
       logger.error("[视频解析]-快手解析失败:", err);
-      await e.reply(`快手解析失败: ${err.message}\n请检查链接是否正确或稍后再试`);
+
+      await e.reply("快手解析超时或失败，请稍后再试");
       return false;
     }
   }
