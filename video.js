@@ -108,7 +108,7 @@ export class videojx extends plugin {
     try {
       logger.info(`[视频解析]-开始解析抖音URL: ${url}`);
 
-      // 调用新API
+      // 调用API
       let apiUrl = `https://api.xinyew.cn/api/douyinjx?url=${encodeURIComponent(url)}`;
       let res = await fetch(apiUrl);
 
@@ -123,7 +123,6 @@ export class videojx extends plugin {
         throw new Error(data.msg || 'API返回错误');
       }
 
-      // 提取视频信息
       let videoInfo = {
         url: data.data.play_url || data.data.video_url,
         desc: data.data.additional_data[0].desc,
@@ -136,7 +135,6 @@ export class videojx extends plugin {
         throw new Error('未获取到视频地址');
       }
 
-      // 发送预览信息
       let msg = [];
       if (videoInfo.avatar) {
         msg.push(segment.image(videoInfo.avatar));
