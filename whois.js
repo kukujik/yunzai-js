@@ -1,6 +1,5 @@
 import plugin from '../../lib/plugins/plugin.js'
 import fetch from 'node-fetch'
-// 删除 punycode 导入
 
 export class WhoisQuery extends plugin {
   constructor() {
