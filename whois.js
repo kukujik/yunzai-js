@@ -1,6 +1,6 @@
 import plugin from '../../lib/plugins/plugin.js'
 import fetch from 'node-fetch'
-import punycode from 'punycode'
+// 删除 punycode 导入
 
 export class WhoisQuery extends plugin {
   constructor() {
@@ -27,7 +27,12 @@ export class WhoisQuery extends plugin {
 
     let queryDomain = originalDomain
     if (/[\u4e00-\u9fa5]/.test(originalDomain)) {
-      queryDomain = punycode.toASCII(originalDomain)
+      try {
+        const url = new URL(`http://${originalDomain}`)
+        queryDomain = url.hostname
+      } catch (error) {
+        console.warn('域名解析失败，使用原域名:', error)
+      }
     }
 
     try {
